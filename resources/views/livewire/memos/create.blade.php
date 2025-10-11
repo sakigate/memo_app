@@ -3,8 +3,7 @@
 use function Livewire\Volt\{state};
 use App\Models\Memo;
 
-
-state(['title', 'body' ]);
+state(['title', 'body']);
 
 // メモを保存する関数
 $store = function () {
@@ -21,7 +20,7 @@ $store = function () {
 ?>
 
 <div>
-    <a href="{{ route("memos.index") }}">戻る</a>
+    <a href="{{ route('memos.index') }}">戻る</a>
     <h1>新規登録</h1>
 
     <form wire:submit="store">

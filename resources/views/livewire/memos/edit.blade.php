@@ -1,13 +1,13 @@
 <?php
 
-use function Livewire\Volt\{state,mount};
+use function Livewire\Volt\{state, mount};
 use App\Models\Memo;
 
 //フォームの状態を管理
-state(["memo", "title", "body"]);
+state(['memo', 'title', 'body']);
 
 // ルートモデルバインディングはmountでまとめて行う
-mount(function (Memo $memo){
+mount(function (Memo $memo) {
     $this->memo = $memo;
     $this->title = $memo->title;
     $this->body = $memo->body;
@@ -15,13 +15,13 @@ mount(function (Memo $memo){
 
 $update = function () {
     $this->memo->update($this->all());
-    return redirect()->route("memos.show", $this->memo);
+    return redirect()->route('memos.show', $this->memo);
 };
 
 ?>
 
 <div>
-    <a href="{{ route("memos.show", $memo) }}">戻る</a>
+    <a href="{{ route('memos.show', $memo) }}">戻る</a>
     <h1>更新</h1>
 
     <form wire:submit="update">
