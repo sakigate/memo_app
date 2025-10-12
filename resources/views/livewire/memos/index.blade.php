@@ -3,11 +3,10 @@
 use function Livewire\Volt\{state};
 use App\Models\Memo;
 
-state(['memos' => fn() => Memo::orderBy("priority","desc")->get()]);
+state(['memos' => fn() => Memo::orderBy('priority', 'desc')->get()]);
 
-
-$create = function(){
-    return redirect()->route("memos.create");
+$create = function () {
+    return redirect()->route('memos.create');
 };
 
 ?>
